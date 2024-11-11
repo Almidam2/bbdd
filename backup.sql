@@ -514,6 +514,7 @@ COPY public.alquiler (id, usuario_id, fecha_fin, fecha_inicio) FROM stdin;
 5	1	2024-11-11	2024-11-06
 6	1	2024-11-11	2024-11-06
 7	12	2024-11-11	2024-11-07
+8	1	2024-11-16	2024-11-11
 \.
 
 
@@ -565,6 +566,8 @@ COPY public.juego (id, producto_id) FROM stdin;
 --
 
 COPY public.otro_dispositivo (id, producto_id, tipo) FROM stdin;
+3	11	movil
+4	12	tablet
 \.
 
 
@@ -578,7 +581,9 @@ COPY public.producto (id, nombre, precio, descripcion, imagen) FROM stdin;
 4	producto04	345	Descripcion producto04 (nieves espabila)	672b5a2b32e6f.png
 8	consola4	300	consola numero 45\r\n	672b5e64695ff.png
 1	producto01	60	Descripcion producto018	672c75e813892.png
-2	Sergio el ninja de mi colegio	40	Descripcion producto02	https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S2_1200x1600-7bf61b8b77e394c4bc709f6b02c0db24
+11	movil01	200	DescMovil1	6731c78678a97.png
+12	movil02	123	DescMovil2	6731c7927f117.png
+2	Sergio el ninja de mi colegio	40	Descripcion producto02	6731c81b85336.jpg
 \.
 
 
@@ -609,6 +614,7 @@ COPY public.ticket_alquiler (id, alquiler_id, producto_id) FROM stdin;
 6	6	2
 7	6	2
 8	7	1
+9	8	9
 \.
 
 
@@ -629,6 +635,8 @@ COPY public.ticket_compra (id, venta_id, producto_id) FROM stdin;
 28	34	2
 29	34	9
 30	35	2
+31	36	9
+32	36	1
 \.
 
 
@@ -676,6 +684,7 @@ COPY public.venta (id, usuario_id, fecha, precio) FROM stdin;
 33	1	2024-11-06	345
 34	12	2024-11-07	140
 35	12	2024-11-07	40
+36	1	2024-11-11	160
 \.
 
 
@@ -683,7 +692,7 @@ COPY public.venta (id, usuario_id, fecha, precio) FROM stdin;
 -- Name: alquiler_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.alquiler_id_seq', 7, true);
+SELECT pg_catalog.setval('public.alquiler_id_seq', 8, true);
 
 
 --
@@ -704,14 +713,14 @@ SELECT pg_catalog.setval('public.juego_id_seq', 4, true);
 -- Name: otro_dispositivo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.otro_dispositivo_id_seq', 2, true);
+SELECT pg_catalog.setval('public.otro_dispositivo_id_seq', 4, true);
 
 
 --
 -- Name: producto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.producto_id_seq', 10, true);
+SELECT pg_catalog.setval('public.producto_id_seq', 12, true);
 
 
 --
@@ -725,14 +734,14 @@ SELECT pg_catalog.setval('public.reparacion_id_seq', 6, true);
 -- Name: ticket_alquiler_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.ticket_alquiler_id_seq', 8, true);
+SELECT pg_catalog.setval('public.ticket_alquiler_id_seq', 9, true);
 
 
 --
 -- Name: ticket_compra_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.ticket_compra_id_seq', 30, true);
+SELECT pg_catalog.setval('public.ticket_compra_id_seq', 32, true);
 
 
 --
@@ -753,7 +762,7 @@ SELECT pg_catalog.setval('public.usuario_id_seq', 21, true);
 -- Name: venta_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.venta_id_seq', 35, true);
+SELECT pg_catalog.setval('public.venta_id_seq', 36, true);
 
 
 --
