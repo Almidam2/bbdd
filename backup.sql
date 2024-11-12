@@ -576,14 +576,14 @@ COPY public.otro_dispositivo (id, producto_id, tipo) FROM stdin;
 --
 
 COPY public.producto (id, nombre, precio, descripcion, imagen) FROM stdin;
-9	Carlos el topo que gira	100	Carlos Es un topo y gira	672ca78c0368f.png
 3	producto03	401	Descripcion producto03	672b5a1bb6c82.png
 4	producto04	345	Descripcion producto04 (nieves espabila)	672b5a2b32e6f.png
 8	consola4	300	consola numero 45\r\n	672b5e64695ff.png
 1	producto01	60	Descripcion producto018	672c75e813892.png
 11	movil01	200	DescMovil1	6731c78678a97.png
 12	movil02	123	DescMovil2	6731c7927f117.png
-2	Sergio el ninja de mi colegio	40	Descripcion producto02	6731c81b85336.jpg
+9	nieves	100	Carlos Es un topo y girat	672ca78c0368f.png
+2	 nieves	40	Descripcion producto02	6731c81b85336.jpg
 \.
 
 
@@ -637,6 +637,20 @@ COPY public.ticket_compra (id, venta_id, producto_id) FROM stdin;
 30	35	2
 31	36	9
 32	36	1
+33	37	1
+34	37	1
+35	37	1
+36	37	2
+37	37	2
+38	37	2
+39	37	3
+40	37	3
+41	37	3
+42	37	11
+43	37	11
+44	37	12
+45	37	4
+46	37	4
 \.
 
 
@@ -685,6 +699,7 @@ COPY public.venta (id, usuario_id, fecha, precio) FROM stdin;
 34	12	2024-11-07	140
 35	12	2024-11-07	40
 36	1	2024-11-11	160
+37	12	2024-11-11	2716
 \.
 
 
@@ -741,7 +756,7 @@ SELECT pg_catalog.setval('public.ticket_alquiler_id_seq', 9, true);
 -- Name: ticket_compra_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.ticket_compra_id_seq', 32, true);
+SELECT pg_catalog.setval('public.ticket_compra_id_seq', 46, true);
 
 
 --
@@ -762,7 +777,7 @@ SELECT pg_catalog.setval('public.usuario_id_seq', 21, true);
 -- Name: venta_id_seq; Type: SEQUENCE SET; Schema: public; Owner: symfony
 --
 
-SELECT pg_catalog.setval('public.venta_id_seq', 36, true);
+SELECT pg_catalog.setval('public.venta_id_seq', 37, true);
 
 
 --
